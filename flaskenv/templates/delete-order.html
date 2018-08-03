@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Order</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    <link rel='stylesheet' type='text/css' href=../static/css/new-order.css>
+
+</head>
+<body>
+
+<div class="row">
+    <a href="/list" class="oheader">
+        <button class="ui button">Back</button>
+    </a>
+</div>
+
+<div class="ui centered grid">
+    <div class="row">
+        <img src="http://wordmewrite.com/wp-content/uploads/2017/07/flowerDivider.png">
+    </div>
+    <div class="row">
+        <h1>DELETE THIS ORDER???</h1>
+    </div>
+    <!--action="/delete/{{id}}"-->
+    <form name="deleteForm" method='POST'>
+        <div class="row">
+            <a href="/list"><button class="ui large button">YES</button></a>
+        </div>
+    </form>
+    <div class="row">
+        <a href="/list"><button class="ui large button">NO</button></a>
+    </div>
+    <div class="row">
+        <img src="http://www.countryfare.co.uk/_images/footer/grass_3.png">
+    </div>
+</div>
+</body>
+</html>

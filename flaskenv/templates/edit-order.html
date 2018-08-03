@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Order</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+    <link rel='stylesheet' type='text/css' href=../static/css/new-order.css>
+
+</head>
+<body>
+<div class="row">
+    <a href="/list" class="oheader">
+        <button class="ui button">Back</button>
+    </a>
+</div>
+<div class="ui eight column centered grid container">
+    <div class="row"><h1>Edit Order</h1></div>
+</div>
+<div style="margin: 20px ;background: aliceblue" class="ui container">
+    {%for i in order%}
+    <form name="editForm" class="ui form" action="/edit/{{i[0]}}" method='POST'>
+
+        <div class="field">
+            <div class="two fields">
+
+                <div class="field">
+                    <label>Customer Name</label>
+                    <input type="text" name="name" value="{{i[1]}}">
+
+                </div>
+                <div class="field">
+                    <label>Phone Number</label>
+                    <input type="text" name="number" value="{{i[2]}}">
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>Address</label>
+            <input type="text" name="address" value="{{i[3]}}">
+        </div>
+        <div class="field">
+            <div class="five fields">
+                <a class="field">
+                    <label>White Micronesian</label>
+                    <input type="number" min=0 name="wmicro" value="{{i[4]}}">
+                </a>
+                <a class="field">
+                    <label>Mix Micronesian</label>
+                    <input type="number" min=0 name="mmicro" value="{{i[5]}}">
+                </a>
+                <a class="field">
+                    <label>Color Micronesian</label>
+                    <input type="number" min=0 name="cmicro" value="{{i[6]}}">
+                </a>
+                <a class="field">
+                    <label>Hibiscus Micronesian</label>
+                    <input type="number" min=0 name="hmicro" value="{{i[7]}}">
+                </a>
+                <a class="field">
+                    <label>Bunch Ginger</label>
+                    <input type="number" min=0 name="bg" value="{{i[8]}}">
+                </a>
+            </div>
+        </div>
+        <div class="field">
+            <div class="two fields">
+                <div class="field">
+                    <label>Order Date</label>
+                    <input type="text" name="odate" value="{{i[9]}}">
+                </div>
+                <div class="field">
+                    <label>Delivery Date</label>
+                    <input type="text" name="ddate" value="{{i[10]}}">
+                </div>
+            </div>
+        </div>
+
+        <button class="ui button" type="submit" value="Submit">Submit</button>
+    </form>
+    {% endfor %}
+</div>
+
+</body>
+</html>
